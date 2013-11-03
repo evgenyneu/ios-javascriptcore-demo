@@ -23,17 +23,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"greet" ofType:@"js"];
-    NSString *jsScript = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSLog(@"%@", path);
-    self.javascriptText.text = jsScript;
+    self.javascriptText.text = [self loadJsFromFile];
     [self runJavaScript];
 }
 
-- (void)didReceiveMemoryWarning
+- (NSString *)loadJsFromFile
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"greet" ofType:@"js"];
+    NSString *jsScript = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    return jsScript;
 }
 
 - (void)runJavaScript

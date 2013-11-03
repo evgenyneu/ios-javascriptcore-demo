@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8150F41826568D00A87F77 /* greet.js in Resources */ = {isa = PBXBuildFile; fileRef = 2BA0ECD2182653000080FBF5 /* greet.js */; };
 		2BA0EC9E18263ADC0080FBF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA0EC9D18263ADC0080FBF5 /* Foundation.framework */; };
 		2BA0ECA018263ADC0080FBF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA0EC9F18263ADC0080FBF5 /* CoreGraphics.framework */; };
 		2BA0ECA218263ADC0080FBF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA0ECA118263ADC0080FBF5 /* UIKit.framework */; };
@@ -231,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8150F41826568D00A87F77 /* greet.js in Resources */,
 				2BA0ECB618263ADC0080FBF5 /* Images.xcassets in Resources */,
 				2BA0ECA818263ADC0080FBF5 /* InfoPlist.strings in Resources */,
 				2BA0ECB118263ADC0080FBF5 /* Main.storyboard in Resources */,
@@ -464,6 +466,7 @@
 				2BA0ECCE18263ADC0080FBF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2BA0ECCF18263ADC0080FBF5 /* Build configuration list for PBXNativeTarget "JSCoreTestTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +475,7 @@
 				2BA0ECD118263ADC0080FBF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
