@@ -7,25 +7,51 @@
 //
 
 #import "ViewController.h"
+#import <JavaScriptCore/JavaScriptCore.h>
 
-@interface ViewController ()
+@interface ViewController ()  <UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *myLabel;
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
+@property (weak, nonatomic) IBOutlet UITextView *javascriptText;
+@property (weak, nonatomic) IBOutlet UITextField *argumentText;
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//	[self myLabel].text = @"Hello";
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"greet" ofType:@"js"];
+    NSString *jsScript = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    NSLog(@"%@", path);
+    self.javascriptText.text = jsScript;
+    [self runJavaScript];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)runJavaScript
+{
+    JSContext *context = [[JSContext alloc] init];
+    [context evaluateScript: self.javascriptText.text];
+    JSValue *function = context[@"greet"];
+    JSValue* result = [function callWithArguments:@[self.argumentText.text]];
+    self.resultLabel.text = [result toString];
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    [self runJavaScript];
+}
+
+- (IBAction)argumentValueEditingChanged:(id)sender {
+    [self runJavaScript];
 }
 
 @end
