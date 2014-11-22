@@ -1,7 +1,6 @@
 # iOS JavaScriptCore demo
 
-This is a demo iOS app that shows how to run JavaScript function from Objective-C.
-
+This is a demo iOS app that shows how to run JavaScript function from Objective-C. If you are reading this you might also be interested in [JS evaluator for Android](https://github.com/evgenyneu/js-evaluator-for-android) library.
 
 ## Screenshot 
 
